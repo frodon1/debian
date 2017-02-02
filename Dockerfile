@@ -19,8 +19,6 @@ RUN echo "deb http://deb.debian.org/debian jessie contrib non-free" >> /etc/apt/
       libcanberra-gtk3-0 libcanberra-gtk-module libcanberra-gtk3-module \
       libglib2.0 libgtk2.0-0 libdbus-glib-1-2 libxt6 libexif12 \
       libgl1-mesa-glx libgl1-mesa-dri nvidia-driver \
-      python-matplotlib cmake libgl2ps-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev qt4-dev-tools \
-      python-qt4-dev pyqt4-dev-tools libqwt-dev r-base-dev \
  && rm -rf /var/lib/apt/lists/* \
  && update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX \
  && echo 127.0.1.1 $(hostname) >> /etc/hosts
@@ -28,5 +26,10 @@ RUN echo "deb http://deb.debian.org/debian jessie contrib non-free" >> /etc/apt/
 COPY archives /opt/archives
 
 RUN wget -O /opt/archives/gmsh-2.11.0-source.tar.gz http://gmsh.info/src/gmsh-2.11.0-source.tgz \
- && wget -O /opt/archives/netgen-4.9.13.tar.gz https://sourceforge.net/projects/netgen-mesher/files/netgen-mesher/4.9.13/netgen-4.9.13.tar.gz \
- && wget -O /opt/archives/qwt-6.1.0.tar.bz2 https://sourceforge.net/projects/qwt/files/qwt/6.1.0/qwt-6.1.0.tar.bz2
+ && wget -O /opt/archives/netgen-5.3.1.tar.gz https://sourceforge.net/projects/netgen-mesher/files/netgen-mesher/5.3/netgen-5.3.1.tar.gz \
+ && wget -O /opt/archives/cmake-3.6.2.tar.gz https://cmake.org/files/v3.6/cmake-3.6.2.tar.gz \
+ && wget -O /opt/archives/matplotlib-1.4.3.tar.gz https://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.4.3/matplotlib-1.4.3.tar.gz \
+ && wget -O /opt/archives/PyQt5_gpl-5.6.tar.gz https://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.6/PyQt5_gpl-5.6.tar.gz \
+ && wget -O /opt/archives/qt-everywhere-opensource-src-5.6.1-1.tar.gz http://download.qt.io/archive/qt/5.6/5.6.1-1/single/qt-everywhere-opensource-src-5.6.1-1.tar.gz \
+ && wget -O /opt/archives/qwt-6.1.2.tar.bz2 https://sourceforge.net/projects/qwt/files/qwt/6.1.2/qwt-6.1.2.tar.bz2 \
+ && wget -O /opt/archives/sip-4.18.tar.gz https://sourceforge.net/projects/pyqt/files/sip/sip-4.18/sip-4.18.tar.gz
