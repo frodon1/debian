@@ -2,7 +2,6 @@ FROM debian:jessie
 MAINTAINER <frodon1@gmail.com>
 
 RUN echo "deb http://deb.debian.org/debian jessie contrib non-free" >> /etc/apt/sources.list \
- && echo "deb http://linux.pleiade.edf.fr/debian jessie main contrib non-free" > /etc/apt/sources.list.d/pleiade.list \
  && echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
  && echo 'APT::Install-Suggests 0;' >> /etc/apt/apt.conf.d/01norecommends \
  && apt-get clean && apt-get update \
